@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if error %}
+{{ error }}
+{% endif %}
+
+
+	<form class="form-signin" style="width: 400px" method="POST">
+		{% csrf_token %}
+	  <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+	  <label class="mb-3" for="username">Username</label>
+	  <input type="text" id="username" name="username" class="form-control" placeholder="username" required>
+	  <br>
+	  <label for="Password">Password</label>
+	  <input type="password" id="Password" name="password" class="form-control" placeholder="Password" required>
+	  <br>
+	  <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+	</form>
+
+
+{% endblock %}
