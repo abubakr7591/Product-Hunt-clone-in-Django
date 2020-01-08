@@ -4,3 +4,4 @@ Product Hunt clone in Django
 Requirements:
 django2.1.5
 Pillow
+psycopg2
