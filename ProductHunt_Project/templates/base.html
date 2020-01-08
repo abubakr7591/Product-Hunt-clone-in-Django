@@ -21,6 +21,7 @@
 <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
 <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#563d7c">
 
@@ -46,13 +47,19 @@
     <header>
 	  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  		<div class="container">
-		  <a class="navbar-brand" href=""><img height="30px" src="{% static 'img/P-sign.png' %}" class="d-inline-block alighn-top">roduct Hunt</a>
+		  <a class="navbar-brand" href="{% url 'home' %}"><img height="30px" src="{% static 'img/P-sign.png' %}" class="d-inline-block alighn-top">Product Hunt</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav ml-auto">
 		      {% if user.is_authenticated %}
+		      <li class="nav-item">
+		      	<a class="nav-link disabled" href="" >Welcome: {{user.username}}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'product_create' %}"><i class="material-icons">add_circle</i></a>
+		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="javascript:{document.getElementById('logout').submit()
 		    }">Log Out</a>
